@@ -1,0 +1,40 @@
+name: CI/CD Pipeline
+
+# This workflow will run on both push and pull request events
+on: 
+  push:
+    branches:
+      - main  # Trigger on pushes to the main branch
+  pull_request:
+    branches:
+      - main  # Trigger on pull requests to the main branch
+
+jobs:
+  build:
+    # The job will run on an Ubuntu machine
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository code to the GitHub runner
+      - uses: actions/checkout@v3
+
+      # Install dependencies (if applicable)
+      - name: Set up Node.js (or your backend language)
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Adjust the version as per your project
+
+      # Install dependencies (only for Node.js-based projects, replace as needed)
+      - name: Install Dependencies
+        run: npm install
+
+      # Run tests (adjust the command based on your project setup)
+      - name: Run Tests
+        run: npm test  # Replace with the appropriate test command for your app
+
+      # (Optional) If deploying, add deployment steps here
+      # Example: Deploy to GitHub Pages or a hosting service
+      # - name: Deploy to production
+      #   run: ./deploy_script.sh
+
+      # Add more steps as needed, such as code linting or checking test coverage
