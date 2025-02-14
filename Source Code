@@ -1,1 +1,59 @@
+src/
+│
+├── components/          # UI components like buttons, maps, etc.
+│   ├── Map.js           # Handling map logic and display
+│   ├── Notification.js  # Managing notifications
+│   └── Profile.js       # Solo traveler profile and settings
+│
+├── utils/               # Utility functions like API calls, data processing
+│   ├── api.js           # API calls are used to fetch destinations, users, etc.
+│   ├── offlineMaps.js   # Logic for managing offline maps
+│   └── notifications.js # Notification management
+│
+├── pages/               # Main app pages
+│   ├── HomePage.js      # Home page layout and functionality
+│   ├── Itinerary.js     # User’s trip itinerary
+│   └── ProfilePage.js   # Solo traveler profile management
+│
+└── App.js               # Main App logic
+
+
+CODE 
+// src/components/Map.js
+
+import React, { useEffect, useState } from 'react';
+import { getOfflineMapData } from '../utils/offlineMaps';
+
+const Map = ({ destination }) => {
+  const [mapData, setMapData] = useState(null);
+
+  useEffect(() => {
+    const fetchMapData = async () => {
+      try {
+        const data = await getOfflineMapData(destination);
+        setMapData(data);
+      } catch (error) {
+        console.error("Error fetching map data", error);
+      }
+    };
+
+    fetchMapData();
+  }, [destination]);
+
+  return (
+    <div>
+      {mapData ? (
+        <div>
+          {/* Display the map with data */}
+          <h3>{destination} Map</h3>
+          <img src={mapData.imageUrl} alt={`Map of ${destination}`} />
+        </div>
+      ) : (
+        <p>Loading map...</p>
+      )}
+    </div>
+  );
+};
+
+export default Map;
 
