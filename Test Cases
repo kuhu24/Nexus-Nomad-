@@ -1,1 +1,10 @@
+tests/
+├── components/
+│   ├── Map.test.js         # Test cases for Map component
+│   ├── Notification.test.js # Test cases for Notification component
+│   └── Profile.test.js     # Test cases for Profile component
+├── utils/
+│   ├── api.test.js         # Test cases for API calls
+│   └── offlineMaps.test.js # Test cases for offline map functionality
+└── App.test.js             # General tests for the App
 
