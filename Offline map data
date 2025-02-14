@@ -1,1 +1,17 @@
+maps/
+├── Rajasthan/
+│   ├── paris_tile_1.png
+│   ├── paris_tile_2.png
+│   ├── paris_tile_3.png
+│   └── paris_metadata.json
+│
+├── Maharashtra/
+│   ├── tokyo_tile_1.png
+│   ├── tokyo_tile_2.png
+│   └── tokyo_metadata.json
+│
+└── Punjab/
+    ├── new-york_tile_1.png
+    ├── new-york_tile_2.png
+    └── new-york_metadata.json
 
