@@ -1,1 +1,30 @@
+# Travel Planner App
+
+Welcome to the Travel Planner App! This app is designed to assist solo travelers by providing:
+
+- Offline Maps
+- Real-time Notifications for Changes/Alternatives
+- Community Features for Solo Travelers
+- Suggestions for Lesser-Known Destinations Similar to Popular Ones
+
+## Features
+- **Offline Maps**: Navigate without an internet connection.
+- **Notifications**: Get notified about updates like flight changes, weather, etc.
+- **Solo Traveler Community**: Connect with others traveling alone.
+- **Destination Suggestions**: Find alternatives to popular destinations.
+
+## Tech Stack
+- **Frontend**: ReactJS
+- **Backend**: Node.js (if applicable)
+- **Maps**: Custom offline map data (Tile-based or vector maps)
+- **Notifications**: Push notifications (Firebase or other service)
+
+## Setup
+
+### Prerequisites
+Make sure you have Node.js installed on your system.
+
+### Clone the repository
+```bash
+git clone https://github.com/yourusername/travel-planner-app.git
 
